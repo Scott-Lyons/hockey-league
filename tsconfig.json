@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es5",
+	"sourceMap": true,
+	"removeComments": true,
+	"rootDir": ".",
+	"outDir": "."
+  },
+  "files": [
+      "./src/Web/app/main/constants/hosts.ts",
+      "./src/Web/app/main/app.ts",
+      "./src/Web/app/main/controllers/mainController.ts",
+      "./src/Web/app/main/services/auth-service.ts",
+      "./src/Web/app/login/controllers/loginController.ts",
+      "./src/Web/app/itemAdd/controllers/itemAddController.ts",
+      "./src/Web/app/itemAdd/services/item-add-service.ts",
+      "./src/Web/app/itemAdd/directives/file-upload-directive.ts",
+      "./src/Web/app/itemAdd/interfaces/IItemCondition.ts",
+      "./src/Web/app/itemAdd/services/image-service.ts",
+      "./src/Web/app/viewItems/controllers/view-items-controller.ts",
+      "./src/Web/app/viewItems/services/view-items-service.ts",
+      "./src/Web/app/viewItems/directives/item-display.ts"
+  ]
+}

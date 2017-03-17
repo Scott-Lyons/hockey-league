@@ -1,0 +1,6 @@
+{
+    "solution_path": "src/game-of-life.sln",
+    "web_path": "src/Web",
+    "web_app_path": "src/Web/app",
+    "build_web_path": "src/Web/bin/"
+}
