@@ -11,18 +11,17 @@
     </div>
     <div class="form-group">
         <label for="Position">Position:</label>
-        r/create
         @Html.DropDownListFor(m => m.PositionIdx, new SelectList(Model.PlayerPositions, "Idx", "Name"), new {@class = "form-control"})
     </div>
     <div class="form-group">
         <label for="TimeInTeam">Time In Team:</label>
-        @Html.TextBoxFor(m => m.TimeInTeam, new {@class = "form-control datepicker"})
+        @Html.TextBoxFor(m => m.TimeInTeam, "{0:dd/MM/yyyy}", new {@class = "form-control datepicker"})
     </div>
     <input type="submit" value="Create" />
     
     <script type="text/javascript">
         $(function() {
-            $(".datepicker").datepicker();
+            $(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});
         });
     </script>
 </form>

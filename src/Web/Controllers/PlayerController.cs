@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using DataAccess.Command;
 using DataAccess.Query;
@@ -28,7 +29,14 @@ namespace Web.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return createPlayerCreateView();
+            var playerModel = new PlayerModel
+            {
+                PlayerPositions = _playerQuery.ListPositions().Select(position => (PlayerPositionModel)position),
+                DateOfBirth = DateTime.Today,
+                TimeInTeam = DateTime.Today
+            };
+
+            return View(playerModel);
         }
 
         // POST: Player/Create
@@ -37,7 +45,10 @@ namespace Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return createPlayerCreateView();
+                playerModel.PlayerPositions =
+                    _playerQuery.ListPositions().Select(position => (PlayerPositionModel) position);
+
+                return View(playerModel);
             }
 
             _playerCommand.Add(new Player
@@ -49,16 +60,6 @@ namespace Web.Controllers
             });
 
             return RedirectToAction("Index", "Home");
-        }
-
-        private ViewResult createPlayerCreateView()
-        {
-            var playerModel = new PlayerModel
-            {
-                PlayerPositions = _playerQuery.ListPositions().Select(position => (PlayerPositionModel)position)
-            };
-
-            return View(playerModel);
         }
     }
 }
