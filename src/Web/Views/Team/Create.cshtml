@@ -1,0 +1,15 @@
+﻿@model Web.Models.TeamModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Team</h2>
+<form method="post">
+    <div class="form-group">
+        <label for="Name">Name:</label>
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        <input type="submit" value="Create" />
+    </div>
+</form>
+
+

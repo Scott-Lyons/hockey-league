@@ -68,7 +68,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Command\UserCommand.cs" />
+    <Compile Include="Command\PlayerCommand.cs" />
+    <Compile Include="Command\TeamCommand.cs" />
     <Compile Include="Mappings\EntityMapping.cs" />
     <Compile Include="Mappings\PlayerMapping.cs" />
     <Compile Include="HockeyLeagueContext.cs" />
