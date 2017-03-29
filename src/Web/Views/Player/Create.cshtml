@@ -17,8 +17,10 @@
         <label for="TimeInTeam">Time In Team:</label>
         @Html.TextBoxFor(m => m.TimeInTeam, "{0:dd/MM/yyyy}", new {@class = "form-control datepicker"})
     </div>
-    <input type="submit" value="Create" />
-    
+    <div>
+        <input type="submit" value="Create" />
+        <input type="button" value="Cancel" onclick="window.location.href = '@Url.Action("Index", "Home")'"/>
+    </div>
     <script type="text/javascript">
         $(function() {
             $(".datepicker").datepicker({dateFormat: 'dd/mm/yy'});

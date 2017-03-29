@@ -8,7 +8,10 @@
     <div class="form-group">
         <label for="Name">Name:</label>
         @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    </div>
+    <div>
         <input type="submit" value="Create" />
+        <input type="button" value="Cancel" onclick="window.location.href = '@Url.Action("Index", "Home")'" />
     </div>
 </form>
 
