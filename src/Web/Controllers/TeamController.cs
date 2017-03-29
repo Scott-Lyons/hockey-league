@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using DataAccess.Command;
 using Domain;
 using Web.Models;
@@ -14,6 +15,12 @@ namespace Web.Controllers
             _teamCommand = teamCommand;
         }
 
+        // GET: Team/Create
+        public ActionResult Create()
+        {
+            return View(new TeamModel());
+        }
+
         // POST: Team/Create
         [HttpPost]
         public ActionResult Create(TeamModel teamModel)
@@ -25,6 +32,7 @@ namespace Web.Controllers
 
             _teamCommand.Add(new Team
             {
+                Idx = Guid.NewGuid(),
                 Name = teamModel.Name
             });
 

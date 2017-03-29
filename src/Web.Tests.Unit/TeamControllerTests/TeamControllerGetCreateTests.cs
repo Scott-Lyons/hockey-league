@@ -1,34 +1,26 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using DataAccess.Command;
 using Domain;
 using Moq;
 using NUnit.Framework;
 using Web.Controllers;
-using Web.Models;
 
 namespace Web.Tests.Unit.TeamControllerTests
 {
     [TestFixture]
-    public class TeamControllerPostCreateTests
+    public class TeamControllerGetCreateTests
     {
         private Mock<ITeamCommand> _mockTeamCommand;
 
-        private TeamModel _teamModel;
-        private RedirectToRouteResult _actualResult;
+        private ActionResult _actualResult;
 
         [SetUp]
         public void GivenATeamController_WhenPostCreateIsCalled()
         {
-            _teamModel = new TeamModel
-            {
-                Name = "Test"
-            };
-
             _mockTeamCommand = new Mock<ITeamCommand>();
 
             var teamController = new TeamController(_mockTeamCommand.Object);
-            _actualResult = teamController.Create(_teamModel) as RedirectToRouteResult;
+            _actualResult = teamController.Create();
         }
 
         [Test]
@@ -40,10 +32,9 @@ namespace Web.Tests.Unit.TeamControllerTests
         }
 
         [Test]
-        public void ThenTheActionShouldRedirectToTheIndex()
+        public void ThenTheViewResultShouldNotBeNull()
         {
-            Assert.That(_actualResult.RouteValues["action"], Is.EqualTo("Index"));
-            Assert.That(_actualResult.RouteValues["controller"], Is.EqualTo("Home"));
+            Assert.That(_actualResult, Is.Not.EqualTo(null));
         }
     }
 }

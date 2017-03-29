@@ -74,6 +74,7 @@
     <Compile Include="Mappings\PlayerMapping.cs" />
     <Compile Include="HockeyLeagueContext.cs" />
     <Compile Include="Mappings\PlayerPositionMapping.cs" />
+    <Compile Include="Mappings\TeamMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\PlayerQuery.cs" />
   </ItemGroup>

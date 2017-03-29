@@ -6,7 +6,7 @@ using Domain;
 using Moq;
 using NUnit.Framework;
 
-namespace DataAccess.Tests.Unit
+namespace DataAccess.Tests.Unit.CommandTests
 {
     [TestFixture]
     public class PlayerQueryListPositionsTests

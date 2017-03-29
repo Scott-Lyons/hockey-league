@@ -56,7 +56,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerQueryListPositionsTests.cs" />
+    <Compile Include="CommandTests\TeamCommandAddTests.cs" />
+    <Compile Include="QueryTests\PlayerQueryListPositionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
